@@ -1,0 +1,12 @@
+RewriteEngine on
+#RewriteRule ^s/([0-9]+) shrtnr.php?code=$1
+RewriteRule ^s/([a-zA-Z0-9]+) rdrct.php?code=$1
+#RewriteRule ^([0-9]+) ?id=$1
+
+
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^([^\.]+)$ $1.php [NC,L]
+ErrorDocument 404 /error
+Redirect /init.php /
+Redirect /trk.php /
